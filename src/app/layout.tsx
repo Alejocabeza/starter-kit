@@ -4,8 +4,6 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 
 import { TRPCReactProvider } from "@/trpc/react";
-import { Header } from "./shared/components/ui/Header";
-import { Footer } from "./shared/components/ui/Footer";
 import { NextIntlClientProvider } from "next-intl";
 
 export const metadata: Metadata = {
@@ -27,9 +25,7 @@ export default function RootLayout({
       <body>
         <TRPCReactProvider>
           <NextIntlClientProvider>
-            <Header />
             <main>{children}</main>
-            <Footer />
           </NextIntlClientProvider>
         </TRPCReactProvider>
       </body>
