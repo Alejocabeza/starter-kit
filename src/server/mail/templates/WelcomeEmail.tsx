@@ -12,23 +12,23 @@ import {
   Tailwind,
   Text,
 } from "@react-email/components";
-import tailwindEmails from "../../tailwind.emails";
+import tailwindConfig from "../tailwind.emails";
 
 export const StripeWelcomeEmail = () => (
   <Html>
     <Head />
-    <Tailwind config={tailwindEmails}>
+    <Tailwind config={tailwindConfig}>
       <Body className="font-stripe bg-[#f6f9fc]">
         <Preview>
-          You&apos;re now ready to make live transactions with Stripe!
+          You`&apos;`re now ready to make live transactions with Stripe!
         </Preview>
         <Container className="mx-auto mb-16 bg-white py-5 pb-12">
           <Section className="px-12">
             <Img src="#" width="49" height="21" alt="Stripe" />
             <Hr className="my-5 border-[#e6ebf1]" />
             <Text className="text-left text-base leading-6 text-[#525f7f]">
-              Thanks for submitting your account information. You're now ready
-              to make live transactions with Stripe!
+              Thanks for submitting your account information. You&apos;re now
+              ready to make live transactions with Stripe!
             </Text>
             <Text className="text-left text-base leading-6 text-[#525f7f]">
               You can view your payments and a variety of other information
@@ -42,7 +42,7 @@ export const StripeWelcomeEmail = () => (
             </Button>
             <Hr className="my-5 border-[#e6ebf1]" />
             <Text className="text-left text-base leading-6 text-[#525f7f]">
-              If you haven't finished your integration, you might find our{" "}
+              If you haven&apos;t finished your integration, you might find our{" "}
               <Link
                 className="text-[#556cd6]"
                 href="https://docs.stripe.com/dashboard/basics"
@@ -52,8 +52,8 @@ export const StripeWelcomeEmail = () => (
               handy.
             </Text>
             <Text className="text-left text-base leading-6 text-[#525f7f]">
-              Once you're ready to start accepting payments, you'll just need to
-              use your live{" "}
+              Once you&apos;re ready to start accepting payments, you&apos;ll
+              just need to use your live{" "}
               <Link
                 className="text-[#556cd6]"
                 href="https://dashboard.stripe.com/login?redirect=%2Fapikeys"
@@ -72,7 +72,7 @@ export const StripeWelcomeEmail = () => (
               .
             </Text>
             <Text className="text-left text-base leading-6 text-[#525f7f]">
-              Finally, we've put together a{" "}
+              Finally, we&apos;ve put together a{" "}
               <Link
                 className="text-[#556cd6]"
                 href="https://docs.stripe.com/get-started/checklist/website"
@@ -82,8 +82,8 @@ export const StripeWelcomeEmail = () => (
               to ensure your website conforms to card network standards.
             </Text>
             <Text className="text-left text-base leading-6 text-[#525f7f]">
-              We'll be here to help you with any step along the way. You can
-              find answers to most questions and get in touch with us on our{" "}
+              We&apos;ll be here to help you with any step along the way. You
+              can find answers to most questions and get in touch with us on our{" "}
               <Link
                 className="text-[#556cd6]"
                 href="https://support.stripe.com"

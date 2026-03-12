@@ -1,4 +1,4 @@
-import { Terminal, Code, Rocket, CheckCircle, Package } from "lucide-react";
+import { Terminal, Code, Rocket, Package } from "lucide-react";
 
 export const Process = () => {
   const steps = [

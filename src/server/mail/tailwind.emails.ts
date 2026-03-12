@@ -9,7 +9,7 @@
  * https://tailwindcss.com/docs/configuration
  */
 
-export default {
+const config = {
   theme: {
     extends: {
       colors: {},
@@ -19,3 +19,5 @@ export default {
     },
   },
 };
+
+export default config;

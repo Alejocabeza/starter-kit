@@ -135,6 +135,7 @@ Detailed documentation is available inside the **`/docs` directory**.
 * [Internationalization](docs/i18n.md)
 * [Database](docs/database.md)
 * [Deployment](docs/deployment.md)
+* [Data Feching](docs/data_feching.md)
 
 ---
 
