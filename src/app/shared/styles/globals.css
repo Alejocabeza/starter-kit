@@ -1,7 +1,11 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: all;
+  themes:
+    bumblebee --default,
+    forest --prefersdark;
 }
+
+@custom-variant dark (&:where([data-theme=forest], [data-theme=forest] *));
 
 @theme {
   /* Definimos la animación directamente aquí */

@@ -46,13 +46,13 @@ export const SocialProof = () => {
   const items = [...testimonials, ...testimonials];
 
   return (
-    <section className="overflow-hidden bg-gradient-to-b from-transparent via-violet-500/5 to-transparent px-4 py-20">
+    <section className="overflow-hidden bg-gradient-to-b from-transparent via-violet-500/5 to-transparent px-4 py-20" id="testimonials">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+          <h2 className="mb-4 text-3xl font-bold text-accent dark:text-white md:text-4xl">
             {t("title")}
           </h2>
-          <p className="text-gray-400">{t("subtitle")}</p>
+          <p className="text-accent dark:text-gray-400">{t("subtitle")}</p>
         </div>
 
         <section className="bg-base-100 relative w-full overflow-hidden py-12">

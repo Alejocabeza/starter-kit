@@ -3,7 +3,17 @@ import createNextIntlPlugin from "next-intl/plugin";
 import { withSentryConfig } from "@sentry/nextjs";
 
 /** @type {import("next").NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/en/home",
+        permanent: true,
+      },
+    ];
+  },
+};
 
 const withNextIntl = createNextIntlPlugin("./src/app/shared/i18n/request.ts");
 
