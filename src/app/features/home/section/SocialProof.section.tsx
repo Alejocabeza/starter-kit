@@ -1,6 +1,9 @@
 import { Terminal, Code, Cpu, Globe, Mail, Zap } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export const SocialProof = () => {
+  const t = useTranslations("Home.SocialProof");
+
   const testimonials = [
     {
       text: "npm install @inngest/middleware-logger",
@@ -47,11 +50,9 @@ export const SocialProof = () => {
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
-            Trusted by Modern Developers
+            {t("title")}
           </h2>
-          <p className="text-gray-400">
-            Powered by the tools you know and love, pre-configured for scale.
-          </p>
+          <p className="text-gray-400">{t("subtitle")}</p>
         </div>
 
         <section className="bg-base-100 relative w-full overflow-hidden py-12">

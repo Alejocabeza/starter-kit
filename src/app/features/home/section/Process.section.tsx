@@ -1,31 +1,25 @@
 import { Terminal, Code, Rocket, Package } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export const Process = () => {
+  const t = useTranslations("Home.Process");
+
   const steps = [
     {
       number: "01",
-      title: "Clone & Setup",
-      subtitle: "Quick Start",
-      description:
-        "Clone the repo, install dependencies, and set up your environment variables. It's that simple.",
+      key: "setup",
       icon: Terminal,
       gradient: "from-violet-500 to-purple-500",
     },
     {
       number: "02",
-      title: "Develop",
-      subtitle: "Type-Safe DX",
-      description:
-        "Build features fast with tRPC, Prisma, and Next.js App Router. Everything is end-to-end type-safe.",
+      key: "develop",
       icon: Code,
       gradient: "from-blue-500 to-cyan-500",
     },
     {
       number: "03",
-      title: "Deploy",
-      subtitle: "Production Ready",
-      description:
-        "Deploy to Vercel or any containerized environment. Background jobs and emails just work.",
+      key: "deploy",
       icon: Rocket,
       gradient: "from-green-500 to-emerald-500",
     },
@@ -35,11 +29,9 @@ export const Process = () => {
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
-            From Zero to Production
+            {t("title")}
           </h2>
-          <p className="text-gray-400">
-            A streamlined workflow designed for shipping products
-          </p>
+          <p className="text-gray-400">{t("subtitle")}</p>
         </div>
 
         {/* Steps Grid */}
@@ -73,15 +65,15 @@ export const Process = () => {
 
                     {/* Title */}
                     <h3 className="mb-2 text-2xl font-bold text-white">
-                      {step.title}
+                      {t(`steps.${step.key}.title`)}
                     </h3>
                     <p className="mb-4 text-sm font-semibold text-gray-500 uppercase">
-                      {step.subtitle}
+                      {t(`steps.${step.key}.subtitle`)}
                     </p>
 
                     {/* Description */}
                     <p className="text-sm leading-relaxed text-gray-400">
-                      {step.description}
+                      {t(`steps.${step.key}.description`)}
                     </p>
                   </div>
                 </div>
@@ -99,7 +91,7 @@ export const Process = () => {
         <div className="mt-16 text-center">
           <p className="flex items-center justify-center gap-2 text-sm text-gray-500">
             <Package className="h-4 w-4 text-green-500" />
-            <span>Includes pre-configured CI/CD workflows</span>
+            <span>{t("bottom")}</span>
           </p>
         </div>
       </div>

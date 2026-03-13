@@ -1,19 +1,15 @@
 import "./src/env.js";
 import createNextIntlPlugin from "next-intl/plugin";
+import { withSentryConfig } from "@sentry/nextjs";
 
 /** @type {import("next").NextConfig} */
-const nextConfig = {
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/home",
-        permanent: true,
-      },
-    ];
-  },
-};
+const nextConfig = {};
 
-const withNextIntl = createNextIntlPlugin('./src/app/shared/i18n/request.ts');
+const withNextIntl = createNextIntlPlugin("./src/app/shared/i18n/request.ts");
 
-export default withNextIntl(nextConfig);
+export default withSentryConfig(withNextIntl(nextConfig), {
+  silent: true,
+  org: process.env.SENTRY_ORG,
+  project: process.env.SENTRY_PROJECT,
+  authToken: process.env.SENTRY_AUTH_TOKEN,
+});

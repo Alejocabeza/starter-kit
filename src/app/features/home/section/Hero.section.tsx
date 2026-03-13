@@ -1,6 +1,10 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 export function Hero() {
+  const t = useTranslations("Home.Hero");
+
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-20">
       {/* Animated background elements */}
@@ -16,34 +20,30 @@ export function Hero() {
         {/* Badge */}
         <div className="mb-8 inline-flex items-center justify-center gap-2 rounded-full border border-violet-500/30 bg-gradient-to-r from-violet-500/20 to-green-500/20 px-4 py-2">
           <div className="h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
-          <span className="text-sm text-gray-300">
-            Production Ready T3 Stack
-          </span>
+          <span className="text-sm text-gray-300">{t("badge")}</span>
         </div>
 
         {/* Main Title */}
         <h1 className="mb-6 text-4xl leading-tight font-bold md:text-5xl">
-          <span className="gradient-text">The Ultimate T3 Starter Kit</span>
+          <span className="gradient-text">{t("title")}</span>
           <br />
-          <span className="text-white">Enhanced for Production</span>
+          <span className="text-white">{t("titleHighlight")}</span>
         </h1>
 
         {/* Subtitle */}
         <p className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-gray-400 md:text-xl">
-          Jumpstart your Next.js project with the best tools pre-configured:
-          Inngest for background jobs, Resend for emails, and next-intl for
-          internationalization.
+          {t("subtitle")}
         </p>
 
         {/* Search Input */}
         <div className="mx-auto mb-12 flex max-w-lg flex-col items-center justify-center gap-3 sm:flex-row">
           <a
-            href="https://github.com/create-t3-app/create-t3-app"
+            href="https://github.com/Alejocabeza/starter-kit"
             target="_blank"
             rel="noopener noreferrer"
             className="glow-violet btn flex h-12 items-center rounded-lg bg-gradient-to-r from-violet-600 to-violet-500 px-8 py-3 font-semibold whitespace-nowrap text-white transition-all duration-300 hover:from-violet-700 hover:to-violet-600"
           >
-            Get Started Free
+            {t("cta")}
           </a>
         </div>
 
@@ -53,19 +53,25 @@ export function Hero() {
             <div className="text-2xl font-bold text-green-500 md:text-3xl">
               100%
             </div>
-            <div className="mt-2 text-sm text-gray-500">Open Source</div>
+            <div className="mt-2 text-sm text-gray-500">
+              {t("stats.openSource")}
+            </div>
           </div>
           <div>
             <div className="text-2xl font-bold text-violet-500 md:text-3xl">
               MIT
             </div>
-            <div className="mt-2 text-sm text-gray-500">License</div>
+            <div className="mt-2 text-sm text-gray-500">
+              {t("stats.license")}
+            </div>
           </div>
           <div>
             <div className="text-2xl font-bold text-green-500 md:text-3xl">
               T3
             </div>
-            <div className="mt-2 text-sm text-gray-500">Stack Based</div>
+            <div className="mt-2 text-sm text-gray-500">
+              {t("stats.stackBased")}
+            </div>
           </div>
         </div>
       </div>

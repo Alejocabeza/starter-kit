@@ -1,17 +1,17 @@
 import { CheckCircle, TrendingUp, Zap, Mail, Globe } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export const FeatureGrid = () => {
+  const t = useTranslations("Home.FeatureGrid");
+
   return (
     <section className="relative px-4 py-20">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
-            Powerful Features for Modern Apps
+            {t("title")}
           </h2>
-          <p className="text-gray-400">
-            Everything you need to build scalable, production-ready
-            applications.
-          </p>
+          <p className="text-gray-400">{t("subtitle")}</p>
         </div>
 
         {/* Bento Grid */}
@@ -25,10 +25,10 @@ export const FeatureGrid = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">
-                    Inngest Integration
+                    {t("inngest.title")}
                   </h3>
                   <p className="text-sm text-gray-400">
-                    Reliable Background Jobs
+                    {t("inngest.subtitle")}
                   </p>
                 </div>
               </div>
@@ -46,11 +46,11 @@ export const FeatureGrid = () => {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-sm text-gray-400">
                       <CheckCircle className="h-4 w-4 text-green-500" />
-                      <span>Event-driven architecture</span>
+                      <span>{t("inngest.features.eventDriven")}</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-gray-400">
                       <CheckCircle className="h-4 w-4 text-green-500" />
-                      <span>Automatic retries & scheduling</span>
+                      <span>{t("inngest.features.retries")}</span>
                     </div>
                   </div>
                 </div>
@@ -58,7 +58,7 @@ export const FeatureGrid = () => {
 
               <div className="flex items-center gap-2 text-sm text-violet-400">
                 <TrendingUp className="h-4 w-4" />
-                <span>Handle millions of events effortlessly</span>
+                <span>{t("inngest.bottom")}</span>
               </div>
             </div>
           </div>
@@ -72,24 +72,28 @@ export const FeatureGrid = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">
-                    Transactional Emails
+                    {t("resend.title")}
                   </h3>
                   <p className="text-sm text-gray-400">
-                    Powered by Resend & React Email
+                    {t("resend.subtitle")}
                   </p>
                 </div>
               </div>
 
               <div className="mb-8 flex-1 space-y-4">
                 <div className="rounded-lg border border-gray-800 bg-gray-900/50 p-4">
-                  <p className="mb-2 text-xs text-gray-500">Email Preview</p>
+                  <p className="mb-2 text-xs text-gray-500">
+                    {t("resend.preview.label")}
+                  </p>
                   <div className="rounded bg-white p-3 text-sm text-black">
-                    <p className="mb-1 font-bold">Welcome on board! 👋</p>
+                    <p className="mb-1 font-bold">
+                      {t("resend.preview.title")}
+                    </p>
                     <p className="text-xs text-gray-600">
-                      Thanks for joining our platform...
+                      {t("resend.preview.body")}
                     </p>
                     <button className="mt-2 w-full rounded bg-black px-3 py-1 text-xs text-white">
-                      Get Started
+                      {t("resend.preview.button")}
                     </button>
                   </div>
                 </div>
@@ -97,18 +101,14 @@ export const FeatureGrid = () => {
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-sm text-gray-300">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Type-safe templates</span>
+                    <span>{t("resend.features.templates")}</span>
                   </li>
                   <li className="flex items-center gap-2 text-sm text-gray-300">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>High deliverability</span>
+                    <span>{t("resend.features.deliverability")}</span>
                   </li>
                 </ul>
               </div>
-
-              <button className="glow-green w-full rounded-lg bg-gradient-to-r from-green-600 to-emerald-600 px-4 py-2 font-semibold text-white transition-all duration-300 hover:from-green-700 hover:to-emerald-700">
-                Explore Email Templates
-              </button>
             </div>
           </div>
 
@@ -116,18 +116,17 @@ export const FeatureGrid = () => {
           <div className="rounded-2xl border border-gray-800 bg-gradient-to-br from-gray-900/80 to-gray-900/40 p-6 transition-all duration-300 hover:border-violet-500/50">
             <h4 className="mb-4 flex items-center gap-2 font-bold text-white">
               <Globe className="h-5 w-5 text-blue-400" />
-              Internationalization
+              {t("i18n.title")}
             </h4>
             <p className="mb-4 text-sm text-gray-400">
-              Complete i18n solution with{" "}
-              <span className="font-semibold text-white">next-intl</span>.
+              {t("i18n.subtitle", { highlight: "next-intl" })}
             </p>
             <ul className="space-y-3">
               {[
-                "Server & Client Components",
-                "Type-safe messages",
-                "Routing middleware",
-                "Locale detection",
+                t("i18n.features.components"),
+                t("i18n.features.messages"),
+                t("i18n.features.middleware"),
+                t("i18n.features.detection"),
               ].map((feature, idx) => (
                 <li
                   key={idx}
@@ -144,7 +143,7 @@ export const FeatureGrid = () => {
           <div className="rounded-2xl border border-gray-800 bg-gradient-to-br from-gray-900/80 to-gray-900/40 p-6 transition-all duration-300 hover:border-violet-500/50">
             <h4 className="mb-4 flex items-center gap-2 font-bold text-white">
               <span className="h-2 w-2 rounded-full bg-violet-500"></span>
-              Core Stack
+              {t("stack.title")}
             </h4>
             <div className="flex flex-wrap gap-2">
               {[

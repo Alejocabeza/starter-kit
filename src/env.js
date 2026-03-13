@@ -7,14 +7,18 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    AUTH_SECRET:
-      process.env.NODE_ENV === "production"
-        ? z.string()
-        : z.string().optional(),
-    DATABASE_URL: z.string().url(),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
+    AUTH_SECRET: z.string(),
+    DATABASE_URL: z.string().url(),
+    INNGEST_SIGNING_KEY: z.string(),
+    RESEND_API_KEY: z.string(),
+    SENTRY_DSN: z.string().url().nullable(),
+    SENTRY_ORG: z.string().nullable(),
+    SENTRY_PROJECT: z.string().nullable(),
+    SENTRY_AUTH_TOKEN: z.string().nullable(),
+    UPLOADTHING_TOKEN: z.string(),
   },
 
   /**
@@ -23,7 +27,10 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    // NEXT_PUBLIC_CLIENTVAR: z.string(),
+    NEXT_PUBLIC_APP_NAME: z.string(),
+    NEXT_PUBLIC_APP_DESCRIPTION: z.string(),
+    NEXT_PUBLIC_APP_URL: z.string().url(),
+    NEXT_PUBLIC_SENTRY_DSN: z.string().url(),
   },
 
   /**
@@ -34,6 +41,17 @@ export const env = createEnv({
     AUTH_SECRET: process.env.AUTH_SECRET,
     DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
+    INNGEST_SIGNING_KEY: process.env.INNGEST_SIGNING_KEY,
+    RESEND_API_KEY: process.env.RESEND_API_KEY,
+    SENTRY_DSN: process.env.SENTRY_DSN,
+    SENTRY_ORG: process.env.SENTRY_ORG,
+    SENTRY_PROJECT: process.env.SENTRY_PROJECT,
+    SENTRY_AUTH_TOKEN: process.env.SENTRY_AUTH_TOKEN,
+    NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME,
+    NEXT_PUBLIC_APP_DESCRIPTION: process.env.NEXT_PUBLIC_APP_DESCRIPTION,
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
+    UPLOADTHING_TOKEN: process.env.UPLOADTHING_TOKEN,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

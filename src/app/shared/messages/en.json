@@ -1,1 +1,82 @@
-{}
+{
+  "Home": {
+    "Hero": {
+      "badge": "Production Ready T3 Stack",
+      "title": "The Ultimate T3 Starter Kit",
+      "titleHighlight": "Enhanced for Production",
+      "subtitle": "Jumpstart your Next.js project with the best tools pre-configured: Inngest for background jobs, Resend for emails, and next-intl for internationalization.",
+      "cta": "Get Started Free",
+      "stats": {
+        "openSource": "Open Source",
+        "license": "License",
+        "stackBased": "Stack Based"
+      }
+    },
+    "SocialProof": {
+      "title": "Trusted by Modern Developers",
+      "subtitle": "Powered by the tools you know and love, pre-configured for scale."
+    },
+    "Process": {
+      "title": "From Zero to Production",
+      "subtitle": "A streamlined workflow designed for shipping products",
+      "steps": {
+        "setup": {
+          "title": "Clone & Setup",
+          "subtitle": "Quick Start",
+          "description": "Clone the repo, install dependencies, and set up your environment variables. It's that simple."
+        },
+        "develop": {
+          "title": "Develop",
+          "subtitle": "Type-Safe DX",
+          "description": "Build features fast with tRPC, Prisma, and Next.js App Router. Everything is end-to-end type-safe."
+        },
+        "deploy": {
+          "title": "Deploy",
+          "subtitle": "Production Ready",
+          "description": "Deploy to Vercel or any containerized environment. Background jobs and emails just work."
+        }
+      },
+      "bottom": "Includes pre-configured CI/CD workflows"
+    },
+    "FeatureGrid": {
+      "title": "Powerful Features for Modern Apps",
+      "subtitle": "Everything you need to build scalable, production-ready applications.",
+      "inngest": {
+        "title": "Inngest Integration",
+        "subtitle": "Reliable Background Jobs",
+        "features": {
+          "eventDriven": "Event-driven architecture",
+          "retries": "Automatic retries & scheduling"
+        },
+        "bottom": "Handle millions of events effortlessly"
+      },
+      "resend": {
+        "title": "Transactional Emails",
+        "subtitle": "Powered by Resend & React Email",
+        "preview": {
+          "label": "Email Preview",
+          "title": "Welcome on board! 👋",
+          "body": "Thanks for joining our platform...",
+          "button": "Get Started"
+        },
+        "features": {
+          "templates": "Type-safe templates",
+          "deliverability": "High deliverability"
+        }
+      },
+      "i18n": {
+        "title": "Internationalization",
+        "subtitle": "Complete i18n solution with {highlight}",
+        "features": {
+          "components": "Server & Client Components",
+          "messages": "Type-safe messages",
+          "middleware": "Routing middleware",
+          "detection": "Locale detection"
+        }
+      },
+      "stack": {
+        "title": "Core Stack"
+      }
+    }
+  }
+}

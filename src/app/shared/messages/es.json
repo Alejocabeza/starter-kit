@@ -1,1 +1,82 @@
-{}
+{
+  "Home": {
+    "Hero": {
+      "badge": "T3 Stack Listo para Producción",
+      "title": "El Kit de Inicio T3 Definitivo",
+      "titleHighlight": "Mejorado para Producción",
+      "subtitle": "Impulsa tu proyecto Next.js con las mejores herramientas preconfiguradas: Inngest para trabajos en segundo plano, Resend para correos electrónicos y next-intl para internacionalización.",
+      "cta": "Empieza Gratis",
+      "stats": {
+        "openSource": "Código Abierto",
+        "license": "Licencia",
+        "stackBased": "Basado en Stack"
+      }
+    },
+    "SocialProof": {
+      "title": "Confiado por Desarrolladores Modernos",
+      "subtitle": "Impulsado por las herramientas que conoces y amas, preconfiguradas para escalar."
+    },
+    "Process": {
+      "title": "De Cero a Producción",
+      "subtitle": "Un flujo de trabajo optimizado diseñado para lanzar productos",
+      "steps": {
+        "setup": {
+          "title": "Clonar y Configurar",
+          "subtitle": "Inicio Rápido",
+          "description": "Clona el repositorio, instala dependencias y configura tus variables de entorno. Es así de simple."
+        },
+        "develop": {
+          "title": "Desarrollar",
+          "subtitle": "DX Tipada",
+          "description": "Construye funciones rápido con tRPC, Prisma y Next.js App Router. Todo es tipado de extremo a extremo."
+        },
+        "deploy": {
+          "title": "Desplegar",
+          "subtitle": "Listo para Producción",
+          "description": "Despliega en Vercel o cualquier entorno contenedorizado. Los trabajos en segundo plano y correos simplemente funcionan."
+        }
+      },
+      "bottom": "Incluye flujos de trabajo CI/CD preconfigurados"
+    },
+    "FeatureGrid": {
+      "title": "Funciones Potentes para Apps Modernas",
+      "subtitle": "Todo lo que necesitas para construir aplicaciones escalables y listas para producción.",
+      "inngest": {
+        "title": "Integración con Inngest",
+        "subtitle": "Trabajos en Segundo Plano Confiables",
+        "features": {
+          "eventDriven": "Arquitectura dirigida por eventos",
+          "retries": "Reintentos automáticos y programación"
+        },
+        "bottom": "Maneja millones de eventos sin esfuerzo"
+      },
+      "resend": {
+        "title": "Correos Transaccionales",
+        "subtitle": "Impulsado por Resend y React Email",
+        "preview": {
+          "label": "Vista Previa",
+          "title": "¡Bienvenido a bordo! 👋",
+          "body": "Gracias por unirte a nuestra plataforma...",
+          "button": "Empezar"
+        },
+        "features": {
+          "templates": "Plantillas tipadas",
+          "deliverability": "Alta entregabilidad"
+        }
+      },
+      "i18n": {
+        "title": "Internacionalización",
+        "subtitle": "Solución completa i18n con {highlight}",
+        "features": {
+          "components": "Componentes de Servidor y Cliente",
+          "messages": "Mensajes tipados",
+          "middleware": "Middleware de enrutamiento",
+          "detection": "Detección de idioma"
+        }
+      },
+      "stack": {
+        "title": "Stack Principal"
+      }
+    }
+  }
+}

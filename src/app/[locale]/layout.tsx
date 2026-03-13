@@ -17,14 +17,23 @@ const geist = Geist({
   variable: "--font-geist-sans",
 });
 
-export default function RootLayout({
+import { getMessages } from "next-intl/server";
+
+export default async function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  params,
+}: Readonly<{
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}>) {
+  const { locale } = await params;
+  const messages = await getMessages();
+
   return (
-    <html lang="en" className={`${geist.variable}`} data-theme="night">
+    <html lang={locale} className={`${geist.variable}`} data-theme="night">
       <body>
         <TRPCReactProvider>
-          <NextIntlClientProvider>
+          <NextIntlClientProvider messages={messages}>
             <main>{children}</main>
           </NextIntlClientProvider>
         </TRPCReactProvider>

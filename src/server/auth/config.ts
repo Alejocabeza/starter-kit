@@ -1,5 +1,6 @@
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { type DefaultSession, type NextAuthConfig } from "next-auth";
+import { type Role } from "@prisma/client";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 import { db } from "@/server/db";
@@ -14,6 +15,7 @@ declare module "next-auth" {
   interface Session extends DefaultSession {
     user: {
       id: string;
+      role: Role;
     } & DefaultSession["user"];
   }
 }
@@ -32,6 +34,8 @@ export const authConfig = {
       user: {
         ...session.user,
         id: user.id,
+        // @ts-expect-error - The adapter types are not 100% correct
+        role: user.role as Role,
       },
     }),
   },
