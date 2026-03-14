@@ -49,3 +49,5 @@ yarn-error.log*
 /generated
 # Sentry Config File
 .env.sentry-build-plugin
+PRODUCT.md
+/.opencode
