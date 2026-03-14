@@ -12,13 +12,13 @@ export const env = createEnv({
       .default("development"),
     AUTH_SECRET: z.string(),
     DATABASE_URL: z.string().url(),
-    INNGEST_SIGNING_KEY: z.string(),
+    INNGEST_SIGNING_KEY: z.string().optional(),
     RESEND_API_KEY: z.string(),
     SENTRY_DSN: z.string().url().optional(),
     SENTRY_ORG: z.string().optional(),
     SENTRY_PROJECT: z.string().optional(),
     SENTRY_AUTH_TOKEN: z.string().optional(),
-    UPLOADTHING_TOKEN: z.string(),
+    UPLOADTHING_TOKEN: z.string().optional(),
   },
 
   /**
