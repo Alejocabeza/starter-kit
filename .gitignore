@@ -46,8 +46,12 @@ yarn-error.log*
 .idea
 
 # Prisma
-/generated
+/prisma/migrations
+/prisma/generated
+
 # Sentry Config File
 .env.sentry-build-plugin
 PRODUCT.md
 /.opencode
+
+
