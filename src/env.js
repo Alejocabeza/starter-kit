@@ -14,10 +14,10 @@ export const env = createEnv({
     DATABASE_URL: z.string().url(),
     INNGEST_SIGNING_KEY: z.string(),
     RESEND_API_KEY: z.string(),
-    SENTRY_DSN: z.string().url().nullable(),
-    SENTRY_ORG: z.string().nullable(),
-    SENTRY_PROJECT: z.string().nullable(),
-    SENTRY_AUTH_TOKEN: z.string().nullable(),
+    SENTRY_DSN: z.string().url().optional(),
+    SENTRY_ORG: z.string().optional(),
+    SENTRY_PROJECT: z.string().optional(),
+    SENTRY_AUTH_TOKEN: z.string().optional(),
     UPLOADTHING_TOKEN: z.string(),
   },
 
@@ -30,7 +30,7 @@ export const env = createEnv({
     NEXT_PUBLIC_APP_NAME: z.string(),
     NEXT_PUBLIC_APP_DESCRIPTION: z.string(),
     NEXT_PUBLIC_APP_URL: z.string().url(),
-    NEXT_PUBLIC_SENTRY_DSN: z.string().url(),
+    NEXT_PUBLIC_SENTRY_DSN: z.string().url().optional(),
   },
 
   /**
