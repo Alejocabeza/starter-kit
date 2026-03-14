@@ -4,11 +4,13 @@ A **production-ready starter kit** built on top of the [Create T3 App](https://c
 
 This project provides a **fully configured foundation for modern SaaS applications**, including tools that are commonly required but usually take hours to set up manually:
 
-* Background jobs
-* Transactional emails
-* Authentication
-* Internationalization
-* Type-safe APIs
+- Background jobs
+- Transactional emails
+- Authentication
+- Internationalization
+- Type-safe APIs
+- File Uploads (UploadThing)
+- Testing (Vitest)
 
 The goal is to let developers **focus on building product features instead of infrastructure**.
 
@@ -18,16 +20,18 @@ The goal is to let developers **focus on building product features instead of in
 
 This starter kit includes everything from the **T3 Stack** plus additional tooling commonly required in real-world SaaS applications.
 
-* **Framework:** Next.js (App Router)
-* **Language:** TypeScript (strict)
-* **Styling:** Tailwind CSS + DaisyUI
-* **API Layer:** tRPC (end-to-end type safety)
-* **Database ORM:** Prisma
-* **Database:** PostgreSQL
-* **Authentication:** Auth.js (NextAuth v5)
-* **Background Jobs:** Inngest
-* **Transactional Emails:** Resend + React Email
-* **Internationalization:** next-intl
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript (strict)
+- **Styling:** Tailwind CSS + DaisyUI
+- **API Layer:** tRPC (end-to-end type safety)
+- **Database ORM:** Prisma
+- **Database:** PostgreSQL
+- **Authentication:** Auth.js (NextAuth v5)
+- **Background Jobs:** Inngest
+- **Transactional Emails:** Resend + React Email
+- **Internationalization:** next-intl
+- **File Uploads:** UploadThing
+- **Testing:** Vitest
 
 ---
 
@@ -44,6 +48,8 @@ This starter kit includes everything from the **T3 Stack** plus additional tooli
 | Background Jobs      | Inngest                |
 | Emails               | Resend + React Email   |
 | Internationalization | next-intl              |
+| File Uploads         | UploadThing            |
+| Testing              | Vitest                 |
 | Styling              | Tailwind CSS + DaisyUI |
 
 ---
@@ -126,16 +132,16 @@ http://localhost:3000
 
 Detailed documentation is available inside the **`/docs` directory**.
 
-* [Getting Started](docs/getting-started.md)
-* [Architecture](docs/architecture.md)
-* [Authentication](docs/authentication.md)
-* [tRPC API](docs/api-trpc.md)
-* [Background Jobs](docs/background-jobs.md)
-* [Emails](docs/emails.md)
-* [Internationalization](docs/i18n.md)
-* [Database](docs/database.md)
-* [Deployment](docs/deployment.md)
-* [Data Feching](docs/data_feching.md)
+- [Getting Started](docs/getting-started.md)
+- [Architecture](docs/architecture.md)
+- [Authentication](docs/authentication.md)
+- [tRPC API](docs/api-trpc.md)
+- [Background Jobs](docs/background-jobs.md)
+- [Emails](docs/emails.md)
+- [Internationalization](docs/i18n.md)
+- [Database](docs/database.md)
+- [Deployment](docs/deployment.md)
+- [Data Fetching](docs/data_fetching.md)
 
 ---
 
@@ -147,21 +153,23 @@ Detailed documentation is available inside the **`/docs` directory**.
 │  └ schema.prisma
 │
 ├ src/
-│  ├ app/              # Next.js App Router pages and layouts
-│  ├ components/       # Reusable React components
-│  ├ emails/           # React Email templates
-│  ├ inngest/          # Background jobs and event handlers
-│  ├ lib/              # Shared utilities and integrations
+│  ├ app/
+│  │  ├ api/           # API Routes (Auth, Inngest, tRPC, UploadThing)
+│  │  ├ features/      # Feature-specific components
+│  │  ├ [locale]/      # Localized pages
+│  │  └ shared/        # Shared resources (components, i18n, providers, styles)
+│  │
 │  ├ server/           # Backend logic
 │  │  ├ api/           # tRPC routers
-│  │  ├ auth.ts        # Auth.js configuration
+│  │  ├ auth/          # Auth.js configuration
+│  │  ├ inngest/       # Inngest functions
+│  │  ├ mail/          # Email templates & config
+│  │  ├ uploadthing/   # UploadThing config
 │  │  └ db.ts          # Prisma client
-│  ├ styles/           # Global styles
-│  └ trpc/             # tRPC client configuration
-│
-├ messages/            # Translation files
-│  ├ en.json
-│  └ es.json
+│  │
+│  ├ trpc/             # tRPC client configuration
+│  ├ env.js            # Environment variables schema
+│  └ middleware.ts     # Next.js middleware
 │
 └ docs/                # Project documentation
 ```
@@ -203,9 +211,9 @@ http://localhost:8288
 
 From there you can:
 
-* Trigger events
-* Inspect job execution
-* Debug workflows
+- Trigger events
+- Inspect job execution
+- Debug workflows
 
 ---
 
@@ -213,10 +221,10 @@ From there you can:
 
 This starter kit works well on platforms like:
 
-* Vercel
-* Railway
-* Fly.io
-* Any Docker-compatible infrastructure
+- Vercel
+- Railway
+- Fly.io
+- Any Docker-compatible infrastructure
 
 Recommended workflow:
 
